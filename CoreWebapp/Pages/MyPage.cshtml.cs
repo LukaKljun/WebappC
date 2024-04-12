@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Globalization;
 
 namespace CoreWebapp.Pages
 {
@@ -7,6 +7,8 @@ namespace CoreWebapp.Pages
     {
         public void OnGet()
         {
-        }
+            string dateTime = DateTime.Now.ToString("d", new CultureInfo(""));
+            ViewData["TimeStamp"] = dateTime;
+        } //LUka
     }
 }
